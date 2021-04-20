@@ -1,6 +1,6 @@
 <?php include_once("../db.php") ?>
-<?php include("../../TG/includes/header.php") ?>
-<?php include("../../TG/Gastos/modal_nuevo.php") ?>
+<?php include("../../soft/includes/header.php") ?>
+<?php include("../../soft/Gastos/modal_nuevo.php") ?>
 <div class="container-fluid ">
   <div class="row p-1">
     <div class="card">
