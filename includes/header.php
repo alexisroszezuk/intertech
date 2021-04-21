@@ -71,7 +71,7 @@ window.onload=show5
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="../../TG/index.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="../../intertech/index.php">Home <span class="sr-only">(current)</span></a>
       </li>
 
       <li class="nav-item">
@@ -83,7 +83,7 @@ window.onload=show5
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Nuevo Cliente</a>
-          <a class="dropdown-item" href="../../TG/Clientes/index.php">Listado Clientes</a>
+          <a class="dropdown-item" href="../../intertech/Clientes/index.php">Listado Clientes</a>
           <a class="dropdown-item" href="#"></a>
         </div>
       </li>
@@ -93,8 +93,8 @@ window.onload=show5
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href=""data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Nueva Caja</a>
-          <a class="dropdown-item" href="../../TG/Admin/index.php">Listado Cajas</a>
-          <a class="dropdown-item" href="../../TG/Gastos">Gastos</a>
+          <a class="dropdown-item" href="../../intertech/Admin/index.php">Listado Cajas</a>
+          <a class="dropdown-item" href="../../intertech/Gastos">Gastos</a>
         </div>
       </li>
     </ul>
