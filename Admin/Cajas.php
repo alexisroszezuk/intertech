@@ -11,12 +11,8 @@
 </head>
 <body>
 <div class="container-fluid p-4">
-
- 
-    
+    <div class="row">
   
-     
-      
       <?php //Consulta a la Base De Datos  
                 $fecha_actual = date("Y/m");
             
@@ -30,21 +26,22 @@
                 $row = mysqli_fetch_array($result_task);
                 while($row = mysqli_fetch_array($result_task)){ ?>
                     
-                <div class="row">
+              
                     <div class="card col-md-2">
 
-                       <div class="card-header text-center text-white bg-info">
-                      <?php echo $row['CAJA'] ?>
-                      </div>
+                        <div class="card-header text-center text-white bg-info">
+                            <?php echo $row['CAJA'] ?>
+                        </div>
 
-                     <div class="card-body">            
-                      <?php echo $row['TOTAL'] ?>
-                      </div>
+                        <div class="card-body">            
+                            <?php echo $row['TOTAL'] ?>
+                        </div>
                     </div>
 
-                </div>   
-                
+               
+
                   <?php }?>
+     </div>                     
                   <?php
 
                 $query2="SELECT SUM(MONTO_CUOTAS_INTERNET) as totalIngresoCuotas FROM INGRESO_CAJA";
