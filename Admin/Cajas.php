@@ -30,9 +30,19 @@
                 $query= "SELECT CAJA,SUM(MONTO) AS TOTAL,MES FROM GASTOS WHERE MES = '$nuevafecha'  GROUP BY CAJA order by TOTAL DESC";
                 $result_task = mysqli_query($conn,$query);
                 $row = mysqli_fetch_array($result_task);
-                $sumGastos = 0.00;
-                $sumGastos = $row['totalGastos'];
-            
+                while($row = mysqli_fetch_array($result_task)){ ?>
+                    <tr>
+                  
+                      <td> <?php echo $row['CAJA'] ?></td>
+                      
+                      <td> <?php echo $row['TOTAL'] ?></td>
+                      
+                      
+                      
+                    </tr>
+  
+                  <?php }?>
+                  <?php
 
                 $query2="SELECT SUM(MONTO_CUOTAS_INTERNET) as totalIngresoCuotas FROM INGRESO_CAJA";
                 $resultadosIngresos = mysqli_query($conn,$query2);
@@ -41,7 +51,7 @@
                 $sumIngresosCuotas = $filasdeIngreso['totalIngresoCuotas'];
                 
                 $totaldeCajaCuotas = $sumIngresosCuotas - $sumGastos;
-                echo '$'. ' '.$totaldeCajaCuotas;
+                //echo '$'. ' '.$totaldeCajaCuotas;
 
                  ?>
       </h5>
