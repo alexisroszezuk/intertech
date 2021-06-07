@@ -1,6 +1,6 @@
 <?php include_once("../db.php") ?>
-<?php include("../../INTERTECH/includes/header.php") ?>
-<?php include("../../INTERTECH/Gastos/modal_nuevo.php") ?>
+<?php include("../../intertech/includes/header.php") ?>
+<?php include("../../intertech/Gastos/modal_nuevo.php") ?>
 
 <div class="container-fluid ">
   <div class="row p-1">
@@ -177,4 +177,4 @@
 
 
 
-<?php include("../../INTERTECH/includes/footer.php") ?>
+<?php include("../../intertech/includes/footer.php") ?>
