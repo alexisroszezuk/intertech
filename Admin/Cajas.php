@@ -21,9 +21,8 @@
                 $nuevafecha = date ( 'Y/m' , $nuevafecha );
                 echo $nuevafecha;
                     //SELECT IDCATEGORIA,NOMBRE_CATEGORIA,SUM(MONTO) AS TOTAL,MES FROM GASTOS WHERE MES = '$nuevafecha' AND CAJA NOT IN('INSTALACIONES','CUOTAS PRODUCTOS','PRODUCTOS')  GROUP BY IDCATEGORIA order by TOTAL DESC
-                $query= "SELECT CAJA,SUM(MONTO) AS TOTAL,MES FROM GASTOS WHERE MES = '$nuevafecha'  GROUP BY CAJA order by TOTAL DESC";
+                $query= "SELECT CAJA,SUM(MONTO) AS TOTAL,MES FROM GASTOS WHERE MES = '$fecha_actual'  GROUP BY CAJA order by TOTAL DESC";
                 $result_task = mysqli_query($conn,$query);
-                $row = mysqli_fetch_array($result_task);
                 while($row = mysqli_fetch_array($result_task)){ ?>
                     
               
