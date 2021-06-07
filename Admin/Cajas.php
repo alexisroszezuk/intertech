@@ -44,93 +44,10 @@
 
 
   
-<div class="row p-4">
-<div class="card col-md-12">
-    <div class="card-header text-white bg-primary text-center">
-      Listado Ingreso Cajas
-    </div>
-    <div class="card-body">
-    <div class="table-responsive">
 
-
-    <table id="example" class="table table-striped table-bordered samall" style="font-size: 15px;">
-        <thead>
-            <tr>
-                <th>N°</th>
-                <th>F CAJA</th>
-                <th>FECHA</th>
-                <th>CUOTAS</th>
-                <th>INST</th>
-                <th>MERPAGO</th>
-                <th>BANCO</th>  
-                <th>OBSERVACIONES</th>
-                <th>MES</th>
-                <th>SISTEMA</th>
-                <th>EDITAR</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php //Consulta a la Base De Datos  
-                $query= "SELECT * FROM INGRESO_CAJA WHERE MES = '$fecha_actual'";
-                $result_task = mysqli_query($conn,$query);
-
-                while($row = mysqli_fetch_array($result_task)){ ?>
-                  <tr>
-                    <td > <?php echo $row['ID'] ?></td>
-                    <td > <?php echo $row['FECHA_CAJA'] ?></td>
-                    <td > <?php echo $row['FECHA'] ?></td>
-                    <td > <?php echo $row['MONTO_CUOTAS_INTERNET'] ?></td>
-                    <td > <?php echo $row['MONTO_INSTALACIONES'] ?></td>
-                    <td > <?php echo $row['MONTO_MERCADOPAGO'] ?></td>
-                    <td > <?php echo $row['MONTO_BANCO'] ?></td>
-                    <td > <?php echo $row['OBSERVACIONES'] ?></td>
-                    <td > <?php echo $row['MES'] ?></td>
-                    <td > <?php echo $row['TOTAL_SISTEMA'] ?></td>
-                    <td >
-                      <a class="btn btn-secondary" href="edit_taks.php?id=<?php echo $row['id']?>">
-                        <i class="fa fa-marker"></i>
-                    </a>
-                      <a class="btn btn-danger" href="delete_taks.php?id=<?php echo $row['id']?>">
-                        <i class="fa fa-trash-alt"></i>
-                    </a>
-                    </td>
-                  </tr>
-
-                <?php }?>
-          
-        </tbody>
-        <tfoot>
-            <tr>
-                <th>ID</th>
-                <th>FECHA CAJA</th>
-                <th>FECHA</th>
-                <th>MONTO CUOTAS</th>
-                <th>INSTALACIONES</th>
-                <th>MERCADOPAGO</th>
-                <th>BANCO</th>
-                <th>OBSERVACIONES</th>
-                <th>MES</th>
-                <th>TOTAL SISTEMA</th>
-                <th>EDITAR</th>
-
-            </tr>
-        </tfoot>
-    </table>
-    </div>
-          
-        </div>
-    </div>
-  </div>
 </div>             
 
 <?php include("../includes/footer.php") ?>
-<SCript>
-  $(document).ready(function() {
-    $('#example').DataTable({
-        "order": [[ 0, "desc" ]]
-    });
-} );
-</SCript>
 
 </body>
 </html>
