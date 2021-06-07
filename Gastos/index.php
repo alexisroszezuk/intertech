@@ -1,6 +1,9 @@
 <?php include_once("../db.php") ?>
+<<<<<<< HEAD
 <?php include("../../INTERTECH/includes/header.php") ?>
 <?php include("../../INTERTECH/Gastos/modal_nuevo.php") ?>
+=======
+>>>>>>> 96507124843be0d12caf6c7ed1ee290ac18d164e
 <div class="container-fluid ">
   <div class="row p-1">
     <div class="card">
