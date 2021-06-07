@@ -26,7 +26,7 @@
                 while($row = mysqli_fetch_array($result_task)){ ?>
                     
               
-                    <div class="card col-md-1">
+                    <div class="card col-md-2">
 
                         <div class="card-header text-center text-white bg-info">
                             <?php echo $row['CAJA'] ?>
