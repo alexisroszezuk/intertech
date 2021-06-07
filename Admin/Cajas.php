@@ -11,11 +11,9 @@
 </head>
 <body>
 <div class="container-fluid p-4">
- <div class="row">
- <div class="card col-md-2">
-    <div class="card-header text-center text-white bg-info">
-      Cuotas Internet
-    </div>
+
+ 
+    
   
      
       
@@ -31,16 +29,21 @@
                 $result_task = mysqli_query($conn,$query);
                 $row = mysqli_fetch_array($result_task);
                 while($row = mysqli_fetch_array($result_task)){ ?>
-                     <div class="card-body">
-                    <h5 class="card-title text-center">
-
-                      <?php echo $row['CAJA'] ?>
-                                            
-                      </h5>
-                      <?php echo $row['TOTAL'] ?>
-                     
-                      </div>
                     
+                <div class="row">
+                    <div class="card col-md-2">
+
+                       <div class="card-header text-center text-white bg-info">
+                      <?php echo $row['CAJA'] ?>
+                      </div>
+
+                     <div class="card-body">            
+                      <?php echo $row['TOTAL'] ?>
+                      </div>
+                    </div>
+
+                </div>   
+                
                   <?php }?>
                   <?php
 
@@ -56,13 +59,13 @@
                  ?>
       
    
-</div>
+
 
 
 
   
 
-</div>             
+          
 
 <?php include("../includes/footer.php") ?>
 
