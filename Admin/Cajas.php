@@ -19,14 +19,14 @@
                 $fecha = date('Y/m/j');
                 $nuevafecha = strtotime ( '-1 month' , strtotime ( $fecha ) ) ;
                 $nuevafecha = date ( 'Y/m' , $nuevafecha );
-                echo $nuevafecha;
+                //echo $nuevafecha;
                     //SELECT IDCATEGORIA,NOMBRE_CATEGORIA,SUM(MONTO) AS TOTAL,MES FROM GASTOS WHERE MES = '$nuevafecha' AND CAJA NOT IN('INSTALACIONES','CUOTAS PRODUCTOS','PRODUCTOS')  GROUP BY IDCATEGORIA order by TOTAL DESC
                 $query= "SELECT CAJA,SUM(MONTO) AS TOTAL,MES FROM GASTOS WHERE MES = '$fecha_actual'  GROUP BY CAJA order by TOTAL DESC";
                 $result_task = mysqli_query($conn,$query);
                 while($row = mysqli_fetch_array($result_task)){ ?>
                     
               
-                    <div class="card col-md-2">
+                    <div class="card col-md-1">
 
                         <div class="card-header text-center text-white bg-info">
                             <?php echo $row['CAJA'] ?>
