@@ -16,8 +16,8 @@
     <div class="card-header text-center text-white bg-info">
       Cuotas Internet
     </div>
-    <div class="card-body">
-      <h5 class="card-title text-center">
+  
+     
       
       <?php //Consulta a la Base De Datos  
                 $fecha_actual = date("Y/m");
@@ -31,16 +31,16 @@
                 $result_task = mysqli_query($conn,$query);
                 $row = mysqli_fetch_array($result_task);
                 while($row = mysqli_fetch_array($result_task)){ ?>
-                    <tr>
-                  
-                      <td> <?php echo $row['CAJA'] ?></td>
-                      
-                      <td> <?php echo $row['TOTAL'] ?></td>
-                      
-                      
-                      
-                    </tr>
-  
+                     <div class="card-body">
+                    <h5 class="card-title text-center">
+
+                      <?php echo $row['CAJA'] ?>
+                                            
+                      </h5>
+                      <?php echo $row['TOTAL'] ?>
+                     
+                      </div>
+                    
                   <?php }?>
                   <?php
 
@@ -54,8 +54,8 @@
                 //echo '$'. ' '.$totaldeCajaCuotas;
 
                  ?>
-      </h5>
-    </div>
+      
+   
 </div>
 
 
