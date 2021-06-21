@@ -59,7 +59,7 @@
             <tbody>
               <?php //Consulta a la Base De Datos  
               
-                $query= "SELECT IDCATEGORIA,NOMBRE_CATEGORIA,SUM(MONTO) AS TOTAL,MES FROM GASTOS WHERE MES = '$nuevafecha' AND CAJA NOT IN('INSTALACIONES','CUOTAS PRODUCTOS','PRODUCTOS')  GROUP BY IDCATEGORIA order by TOTAL DESC
+                $query= "SELECT IDCATEGORIA,NOMBRE_CATEGORIA,SUM(MONTO) AS TOTAL,MES FROM GASTOS WHERE MES = '$nuevafecha' AND CAJA NOT IN('4','5','6','7','8','9','10','11','12','13','14','15','16','17','18')  GROUP BY IDCATEGORIA order by TOTAL DESC
                 ";
                 $result_task = mysqli_query($conn,$query);
 
