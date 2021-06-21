@@ -21,7 +21,8 @@
                 $nuevafecha = date ( 'Y/m' , $nuevafecha );
                 //echo $nuevafecha;
                     //SELECT IDCATEGORIA,NOMBRE_CATEGORIA,SUM(MONTO) AS TOTAL,MES FROM GASTOS WHERE MES = '$nuevafecha' AND CAJA NOT IN('INSTALACIONES','CUOTAS PRODUCTOS','PRODUCTOS')  GROUP BY IDCATEGORIA order by TOTAL DESC
-                $query= "SELECT CAJA,SUM(MONTO) AS TOTAL,MES FROM GASTOS WHERE MES = '$fecha_actual'  GROUP BY CAJA order by TOTAL DESC";
+                //$query= "SELECT CAJA,SUM(MONTO) AS TOTAL,MES FROM GASTOS WHERE MES = '$fecha_actual'  GROUP BY CAJA order by TOTAL DESC";
+                $query= "SELECT IDCAJA,MONTO AS TOTAL,MES FROM CAJAS order by idcaja DESC";
                 $result_task = mysqli_query($conn,$query);
                 while($row = mysqli_fetch_array($result_task)){ ?>
                     
@@ -29,10 +30,22 @@
                     <div class="card col-md-2">
 
                         <div class="card-header text-center text-white bg-info">
-                            <?php echo $row['CAJA'] ?>
+                            <?php echo $row['IDCAJA'] ?>
                         </div>
-
+                    
                         <div class="card-body">            
+                        <?php 
+                            $query2="SELECT SUM(MONTO_CUOTAS_INTERNET) as totalIngresoCuotas FROM INGRESO_CAJA";
+                            $resultadosIngresos = mysqli_query($conn,$query2);
+                            $filasdeIngreso = mysqli_fetch_array($resultadosIngresos);
+                            $sumIngresosCuotas = 0.00;
+                            $sumIngresosCuotas = $filasdeIngreso['totalIngresoCuotas'];
+                            
+                            $totaldeCajaCuotas = $sumIngresosCuotas - $sumGastos;
+                                    
+                        ?>  
+                           
+                           
                             <?php echo $row['TOTAL'] ?>
                         </div>
                     </div>
@@ -43,13 +56,6 @@
      </div>                     
                   <?php
 
-                $query2="SELECT SUM(MONTO_CUOTAS_INTERNET) as totalIngresoCuotas FROM INGRESO_CAJA";
-                $resultadosIngresos = mysqli_query($conn,$query2);
-                $filasdeIngreso = mysqli_fetch_array($resultadosIngresos);
-                $sumIngresosCuotas = 0.00;
-                $sumIngresosCuotas = $filasdeIngreso['totalIngresoCuotas'];
-                
-                $totaldeCajaCuotas = $sumIngresosCuotas - $sumGastos;
                 //echo '$'. ' '.$totaldeCajaCuotas;
 
                  ?>
