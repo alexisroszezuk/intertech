@@ -22,7 +22,7 @@
                 //echo $nuevafecha;
                     //SELECT IDCATEGORIA,NOMBRE_CATEGORIA,SUM(MONTO) AS TOTAL,MES FROM GASTOS WHERE MES = '$nuevafecha' AND CAJA NOT IN('INSTALACIONES','CUOTAS PRODUCTOS','PRODUCTOS')  GROUP BY IDCATEGORIA order by TOTAL DESC
                 //$query= "SELECT CAJA,SUM(MONTO) AS TOTAL,MES FROM GASTOS WHERE MES = '$fecha_actual'  GROUP BY CAJA order by TOTAL DESC";
-                $query= "SELECT IDCAJA,MONTO AS TOTAL,MES FROM CAJAS order by idcaja DESC";
+                $query= "SELECT IDCAJA,SALDO AS TOTAL FROM CAJAS order by idcaja DESC";
                 $result_task = mysqli_query($conn,$query);
                 while($row = mysqli_fetch_array($result_task)){ ?>
                     
