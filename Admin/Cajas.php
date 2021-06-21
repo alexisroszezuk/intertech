@@ -33,7 +33,7 @@
                             <?php echo $row['NOMBRE_CAJA'] ?>
                         </div>
                     
-                        <div class="card-body">            
+                        <div class="card-body text-center">            
                         <?php 
                             $query2="SELECT SUM(MONTO_CUOTAS_INTERNET) as totalIngresoCuotas FROM INGRESO_CAJA";
                             $resultadosIngresos = mysqli_query($conn,$query2);
