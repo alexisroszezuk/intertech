@@ -59,7 +59,7 @@ window.onload=show5
 
 
 
-    <title>Crud</title>
+    <title>Sistema Intertech</title>
   </head>
   <body>
 
@@ -93,7 +93,8 @@ window.onload=show5
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href=""data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Nueva Caja</a>
-          <a class="dropdown-item" href="../../intertech/Admin/index.php">Listado Cajas</a>
+          <a class="dropdown-item" href="../../intertech/Admin/index.php">Listado Cajas Viejo</a>
+          <a class="dropdown-item" href="../../intertech/Admin/Cajas.php">Saldo Cajas</a>
           <a class="dropdown-item" href="../../intertech/Gastos">Gastos</a>
         </div>
       </li>
